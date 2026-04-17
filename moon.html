@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NIOMA Galaxy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Noto+Sans+Malayalam&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= BODY ================= */
+
+body{
+margin:0;
+overflow:hidden;
+background:radial-gradient(circle,#070816,#000);
+color:white;
+font-family:'Poppins',sans-serif;
+}
+
+/* ================= STAR FIELD ================= */
+
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 150s linear infinite;
+}
+
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:3000px 3000px;}
+}
+
+/* ================= TITLE ================= */
+
+.title{
+position:absolute;
+top:30px;
+width:100%;
+text-align:center;
+font-size:32px;
+letter-spacing:3px;
+}
+
+.malayalam{
+font-family:'Noto Sans Malayalam';
+font-size:16px;
+opacity:.8;
+}
+
+/* ================= GALAXY AREA ================= */
+
+.galaxy{
+position:relative;
+width:100vw;
+height:100vh;
+}
+
+/* ================= MOONS ================= */
+
+.moon{
+position:absolute;
+border-radius:50%;
+cursor:pointer;
+transition:.5s;
+}
+
+/* moon glow */
+.moon:hover{
+transform:scale(1.2);
+box-shadow:0 0 50px white;
+}
+
+/* individual moons */
+
+.moon1{
+width:120px;
+height:120px;
+top:25%;
+left:20%;
+background:radial-gradient(circle,#fff,#c9a0ff);
+animation:float 6s infinite ease-in-out;
+}
+
+.moon2{
+width:150px;
+height:150px;
+top:60%;
+left:60%;
+background:radial-gradient(circle,#fff,#ffd6a5);
+animation:float 8s infinite ease-in-out;
+}
+
+.moon3{
+width:100px;
+height:100px;
+top:40%;
+left:75%;
+background:radial-gradient(circle,#fff,#a0e7e5);
+animation:float 7s infinite ease-in-out;
+}
+
+.moon4{
+width:130px;
+height:130px;
+top:70%;
+left:25%;
+background:radial-gradient(circle,#fff,#ffafcc);
+animation:float 9s infinite ease-in-out;
+}
+
+/* floating motion */
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-25px);}
+}
+
+/* labels */
+
+.label{
+text-align:center;
+margin-top:140px;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="title">
+NIOMA Galaxy 🌙
+<div class="malayalam">
+നിങ്ങളുടെ ചന്ദ്രനെ തിരഞ്ഞെടുക്കൂ
+</div>
+</div>
+
+<div class="galaxy">
+
+<div class="moon moon1" onclick="enterMoon('dream')">
+<div class="label">Dream Moon</div>
+</div>
+
+<div class="moon moon2" onclick="enterMoon('hope')">
+<div class="label">Hope Moon</div>
+</div>
+
+<div class="moon moon3" onclick="enterMoon('silent')">
+<div class="label">Silent Moon</div>
+</div>
+
+<div class="moon moon4" onclick="enterMoon('memory')">
+<div class="label">Memory Moon</div>
+</div>
+
+</div>
+
+<script>
+
+function enterMoon(type){
+window.location.href="chamber.html?moon="+type;
+}
+
+</script>
+<script src="music.js"></script>
+</body>
+</html>
