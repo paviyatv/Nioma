@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Click anywhere to play music</h2>
+
+<button onclick="playMusic()">Play Music</button>
+
+<script>
+let music;
+
+function playMusic(){
+    music = new Audio("assets/moon.mp3");
+    music.loop = true;
+    music.play();
+}
+</script>
+
+</body>
+</html>
